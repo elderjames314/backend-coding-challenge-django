@@ -18,7 +18,7 @@ def api_random_notes(request, *args, **kwargs):
         if instance:
            # data = model_to_dict(instance, fields=['title', 'body', 'tags'])
              data = NoteSerializer(instance).data
-             print(data)
+            # print(data)
              return Response(data)
     except:
         pass
