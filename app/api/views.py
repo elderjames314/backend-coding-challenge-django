@@ -27,7 +27,7 @@ def api_random_notes(request, *args, **kwargs):
 def add_new_note(request, *args, **kwargs):
     data={}
     serialiser = NoteSerializer(data=request.data)
-    if serialiser.is_valie(raise_exception=True):
+    if serialiser.is_valid(raise_exception=True):
         instance = serialiser.save()
         return Response(serialiser.data)
     return Response({"message" : "invalid data"}, status=400)
